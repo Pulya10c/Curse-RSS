@@ -1,28 +1,28 @@
-
 .hat {
-    flex: 4;
-    align-items: flex-start;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    flex: 4; 
 } 
 
 .notification {
     position: fixed;
     display: flex;
     flex-direction: column;
+    top: 23px;
+    left: 25px;
     width: 350px;
     height: 210px;
     border: 1px solid;
     border-radius: 5px;
     background: #ffffff;
-    top: 23px;
-    left: 25px;
     box-shadow: 0 0 10px black;
 }
 
 .close {
-    margin: 5px 16px 0 6px;
     width: 25px;
+    margin: 5px 16px 0 6px;
+    font-size: 17px;
     border: none;
     background: none;
     font-size: 17px;
@@ -36,48 +36,48 @@
 
 .slides {
     flex: 1;
+    height: 115px;
     margin: 5px 5px 37px 5px;
     width: 265px;
-    height: 115px;
-    border: 1px solid;
     font-size: 12px;
+    border: 1px solid;
     background: white;
     border-radius: 5px;
     overflow: hidden;
 }
 
 h2 {
-    font-size: 1.2em;
     margin: 5px 0 5px 10px;
+    font-size: 1.2em;
 }
 
 .container {
-    background: rgb(235, 235, 236);
+    display: flex;
     flex: 1;
     align-items: center;
-    display: flex;
+    background: rgb(235, 235, 236);
 }
 
 .disable {
-    margin-left: 1px;
     display: flex;
     flex: 1;
     flex-direction: row;
+    margin-left: 1px;
 }
 
 .navigation {
+    display: flex;
     flex: 1;
     margin-right: 15px;
-    display: flex;
 }
 
 .prev, .next {
-    text-align: center;
     flex: 1;
+    text-align: center;
+    margin: 0 3px;
+    color: grey;
     border-radius: 50%;
     border: 1px solid grey;
-    color: grey;
-    margin: 0 3px;
 }
 
 .prev:hover, .next:hover {
@@ -86,28 +86,28 @@ h2 {
 }
 
 .navdots {
+    display: flex;
+    margin: 0;
     padding: 0;
     list-style: none;
-    margin: 0;
-    display: flex;
 }
 
 .dots {
-    width: 2px;
     flex: 1;
-    background: rgb(138, 134, 134);
-    border-radius: 50%;
+    width: 2px;
     margin: 6px 4px 6px;
     padding: 4px;
+    background: rgb(138, 134, 134);
+    border-radius: 50%;
 }
 
 .dots.active {
-    background: rgb(54, 54, 225);
-    width: 2px;
     flex: 1;
-    border-radius: 50%;
+    width: 2px;
     margin: 6px 4px 6px;
     padding: 4px;
+    background: rgb(54, 54, 225);
+    border-radius: 50%;
 }
 
  
