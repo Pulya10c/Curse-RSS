@@ -34,3 +34,31 @@ window.onload = function () {
         });
     
 }
+
+function slideContent (n) {
+    indexSlider += n;
+    if(indexSlider>TEXT_NOTIFICATION.length) {
+        indexSlider = 1;
+    }
+    if(indexSlider<1) {
+        indexSlider = TEXT_NOTIFICATION.length;
+    }
+    document.getElementById('textNotation').innerHTML = TEXT_NOTIFICATION[indexSlider-1];
+    classExchange();  
+}
+
+function classExchange() {
+    Array.from(pointSlider).forEach(li=> {
+        li.className = li.className.replace(" active", "");
+    });
+    pointSlider[indexSlider-1].className += " active";
+}
+
+function nextSlide(n) {
+    n= Number(n);
+    slideContent(n);
+}    
+
+keyD.addEventListener('click', ()=> {nextSlide(-1)}, false);
+keyU.addEventListener('click', ()=> {nextSlide(+1)}, false);
+
