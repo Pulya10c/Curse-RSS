@@ -62,3 +62,21 @@ function nextSlide(n) {
 keyD.addEventListener('click', ()=> {nextSlide(-1)}, false);
 keyU.addEventListener('click', ()=> {nextSlide(+1)}, false);
 
+
+window.addEventListener ('keydown', function (e) {
+    console.log(e.keyCode); 
+    switch(e.keyCode) { 
+        case 37 : {nextSlide(-1);}
+        break;
+        case 39 : {nextSlide(+1);}
+        break; 
+        case 27 : {
+            if(checkboxDisable.checked) {
+                localStorage.setItem('KeyStorage','GoodBay');
+            } 
+                notificationClosed.style.display = 'none';
+        }
+        break; 
+    console.log(e.keyCode);
+    }   
+});
