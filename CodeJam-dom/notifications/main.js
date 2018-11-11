@@ -22,7 +22,7 @@ window.onload = function () {
     notificationClosed.style.display = 'none';
   } 
   else {
-    setTimeout (function () {notificationClosed.style.display = 'flex'}, 0);
+    setTimeout (function () {notificationClosed.style.display = 'flex'}, 5000);
   }  
   closeBox.addEventListener('click', function(e) {
     if(checkboxDisable.checked) {
