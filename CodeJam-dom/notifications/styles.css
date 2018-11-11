@@ -10,20 +10,20 @@
     display: flex;
     flex-direction: column;
     top: 23px;
-    left: 25px;
+    left: 950px;
     width: 350px;
     height: 210px;
-    border: 1px solid;
     border-radius: 5px;
-    background: #ffffff;
+    background: #dff0d8;
     box-shadow: 0 0 10px black;
 }
 
 .close {
     width: 25px;
     margin: 5px 16px 0 6px;
-    font-size: 17px;
+    color: green;
     border: none;
+    font-weight: 700;
     background: none;
     font-size: 17px;
 }
@@ -40,7 +40,7 @@
     margin: 5px 5px 37px 5px;
     width: 265px;
     font-size: 12px;
-    border: 1px solid;
+    border: 1px solid green;;
     background: white;
     border-radius: 5px;
     overflow: hidden;
@@ -49,13 +49,14 @@
 h2 {
     margin: 5px 0 5px 10px;
     font-size: 1.2em;
+    color: green;
 }
 
 .container {
     display: flex;
     flex: 1;
     align-items: center;
-    background: rgb(235, 235, 236);
+    background: #7ba579;
 }
 
 .disable {
@@ -75,14 +76,14 @@ h2 {
     flex: 1;
     text-align: center;
     margin: 0 3px;
-    color: grey;
+    color: #0a5a0a;
     border-radius: 50%;
-    border: 1px solid grey;
+    border: 2px solid  #0a5a0a;
 }
 
 .prev:hover, .next:hover {
-    background: rgb(119, 119, 240);
-    color:white;
+    background: rgb(193, 230, 193);
+    color:#023e02;
 }
 
 .navdots {
@@ -95,19 +96,33 @@ h2 {
 .dots {
     flex: 1;
     width: 2px;
-    margin: 6px 4px 6px;
+    margin: 8px 4px 7px;
     padding: 4px;
-    background: rgb(138, 134, 134);
+    background: rgb(193, 230, 193);
     border-radius: 50%;
 }
 
 .dots.active {
     flex: 1;
     width: 2px;
-    margin: 6px 4px 6px;
+    margin: 8px 4px 7px;
     padding: 4px;
-    background: rgb(54, 54, 225);
+    background: green;
     border-radius: 50%;
+}
+
+.slides p {
+    font-size: 15px;
+    font-style: italic;
+    margin: 0 5px 0px 10px;
+    color: green;
+}
+
+label {
+    font-weight: 600;
+    color:#023e02;
+    font-size: 12px;
+    margin-top: 2px;
 }
 
  
