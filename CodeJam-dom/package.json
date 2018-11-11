@@ -1,0 +1,29 @@
+{
+    "name": "codejam3",
+    "version": "1.0.0",
+    "description": "function!",
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/rolling-scopes-school/pulya10c-2018Q3/tree/CodeJam-dom"
+    },
+    "author": "Aleh Serhiyenia",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Pulya10c/rsschool-codejam/issues"
+    },
+    "homepage": "https://github.com/rolling-scopes-school/pulya10c-2018Q3",
+    "devDependencies": {
+     
+    },
+    "dependencies": {
+      "eslint-config-airbnb-base": "^13.1.0",
+      "eslint-plugin-import": "^2.14.0"
+      
+    },
+    "eslintConfig": ".eslintrc.json",
+    "env": {
+          
+      "browser": true
+    }
+  }
