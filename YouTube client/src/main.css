@@ -199,15 +199,6 @@ img {
   -webkit-transition: 5s;
 }
 
-.spinner {
-  position: absolute;
-  margin: 0px 225px;
-  display: none;
-  background: url(../img/download.gif) no-repeat;
-  width: 40px;
-  height: 40px;
-}
-
 .spinner.active {
   display: block;
 }
