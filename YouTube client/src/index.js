@@ -110,38 +110,6 @@ function IdVideo(object) {
   return [result, obj.nextPageToken];
 }
 
-// function TemplateInfoAPI(object) {
-//   const obj = object;
-//   function SearchInfoValue(item) {
-//     const ObjectInf = {};
-//     ObjectInf.user = item.snippet.channelTitle;
-//     ObjectInf.url = item.snippet.thumbnails.medium.url;
-//     ObjectInf.description = item.snippet.description;
-//     ObjectInf.title = item.snippet.title;
-//     ObjectInf.viewCount = item.statistics.viewCount;
-//     ObjectInf.date = item.snippet.publishedAt.substring(0, item.snippet.publishedAt.indexOf('T'));
-//     ObjectInf.Idlink = `https://www.youtube.com/watch?v=${item.id}`;
-//     return ObjectInf;
-//   }
-//   const result = obj.items.map(SearchInfoValue);
-//   return result || alert('Sorry, can\'t API YouTube response data');
-// }
-
-// function makeUrl(object, options) {
-//   let url;
-//   const obj = object;
-//   if (options === 1) {
-//     url = `https://www.googleapis.com/youtube/v3/search?key=${obj.apiKey}&type=video&part=snippet&maxResults=15&q=${obj.endpoint}`;
-//   }
-//   if (options === 2 && obj.nextPage) {
-//     url = `https://www.googleapis.com/youtube/v3/search?key=${obj.apiKey}&type=video&part=snippet&maxResults=15&q=${obj.endpoint}&pageToken=${obj.nextPage}`;
-//   }
-//   if (options === 3 && obj.Id) {
-//     url = `https://www.googleapis.com/youtube/v3/videos?key=${obj.apiKey}&id=${obj.Id}&part=snippet,statistics`;
-//   }
-//   return url;
-// }
-
 async function loadAPI(options, callback, obj) {
   // eslint-disable-next-line no-return-await
   return await fetch(makeUrl(obj, options), {
@@ -155,8 +123,6 @@ async function loadAPI(options, callback, obj) {
 
 async function makeRequest(object) {
   let obj = object;
-  // spiner = document.getElementById('download');
-  // spiner.className += ' active';
   loadAPI(1, IdVideo, obj)
     .then((res) => {
       storageInf.Id = res[0];
@@ -200,29 +166,6 @@ async function downloadRequest(object) {
   return obj;
 }
 
-// function makeCard(object) {
-//   const obj = object;
-//   if (obj.firstStart !== true && obj.downloadCard !== true) {
-//     removeElement('cardPanel');
-//   }
-//   for (let i = 0; i < Math.ceil(boxOfCards.length / obj.numberSlidesVisible); i++) {
-//     const newPanel = document.createElement('div');
-//     newPanel.className = 'content';
-//     newPanel.id = `number${i + 1}`;
-//     document.querySelector('.cardPanel').appendChild(newPanel);
-//     for (let j = 0; j < obj.numberSlidesVisible; j++) {
-//       if (j + i * obj.numberSlidesVisible < boxOfCards.length) {
-//         const newCard = document.createElement('div');
-//         newCard.className += 'youtubeCard';
-//         newCard.innerHTML = createCard(boxOfCards[j + i * obj.numberSlidesVisible]);
-//         document.querySelector(`#number${i + 1}`).appendChild(newCard);
-//       }
-//     }
-//   }
-//   document.querySelector(`#number${obj.activeSlide}`).className = document.querySelector(`#number${obj.activeSlide}`).className.replace('content', 'content active');
-// }
-// хранит данные из API для карточками
-
 function start(object) {
   const obj = object;
   if (obj.firstStart !== true) {
@@ -234,8 +177,6 @@ function start(object) {
   return obj;
 }
 
-/** ********************************** */
-
 function removeElement(className) {
   const conteinerLengthChild = document.querySelector(`.${className}`).children.length;
   if (conteinerLengthChild) {
@@ -245,15 +186,6 @@ function removeElement(className) {
     }
   }
 }
-
-// function removeSlider(object) {
-//   const obj = object;
-//   if (obj.playStart !== true) {
-//     if(document.querySelector('.wrapperSlider')) {
-//     document.querySelector('.wrapperSlider').remove();
-//     }
-//   }
-// }
 
 /* Отслеживание собитий в инпуте по нажатию Enter */
 window.addEventListener('keypress', (e) => {
@@ -299,25 +231,6 @@ function setActiveSlide(oldSlide, object) {
   document.getElementById(`Label${obj.activeSlide}`).className += ' active';
   return obj;
 }
-
-// function createCard(object) {
-//   const obj = object;
-//   const CardLayout = `<a class="nameCard" target="_blank" href = "${obj.Idlink}" >${obj.title}</a>
-//                         <div class="imgBGYouTube">
-//                         <img src="${obj.url}" alt="images YouTube" class="fotoBGCard"/>
-//                         </div>
-//                         <div class="allInfCard">
-//                         <span class="infoUser"><p class = 'textInfo'>${obj.user}</p></span>
-//                         <span class="infoDate"><p class = 'textInfo'>${obj.date}</p></span>
-//                         <span class="infoView"><p class = 'textInfo'>${obj.viewCount}</p></span>
-//                         </div>
-//                         <div class="descriptionCard">
-//                         <p class="infoDscCard"> ${obj.description}</p>
-//                         </div>`;
-
-
-//   return CardLayout;
-// }
 
 function changeSizeWraper(size) {
   const wrapperSize = document.getElementById('wrapper');
@@ -388,11 +301,8 @@ function slideChangeRun(active, object) {
 let touchstartX = 0;
 let touchendX = 0;
 const gesuredZone = document.querySelector('body');
-/* touchstart */
 
 gesuredZone.addEventListener('mousedown', (event) => {
-//   event.preventDefault();
-// event.stopPropagation();
   if (event.target.className !== 'sliderPanel'
     && event.target.className !== 'labelDot'
     && event.target.className !== 'searchPanel'
@@ -406,8 +316,6 @@ gesuredZone.addEventListener('mousedown', (event) => {
 }, false);
 
 let shift;
-/* Обработайте данные */
-/* Для примера */
 gesuredZone.addEventListener('mousemove', (event) => {
   if (event.target.className !== 'sliderPanel'
     && event.target.className !== 'labelDot'
@@ -472,70 +380,66 @@ function handleGesure(object) {
   return obj;
 }
 
-/************************************** */
-
 gesuredZone.addEventListener('touchstart', (event) => {
   event.preventDefault();
   event.stopPropagation();
-    if (event.target.className !== 'sliderPanel'
+  if (event.target.className !== 'sliderPanel'
       && event.target.className !== 'labelDot'
       && event.target.className !== 'searchPanel'
       && event.target.className !== 'searchQueryInput'
       && event.target.className !== 'buttonSearch') {
-      if (event.which !== 1) {
-        return;
-      }
-      touchstartX = event.screenX;
+    if (event.which !== 1) {
+      return;
     }
-  }, false);
-  
-  let shift;
-  /* Обработайте данные */
-  /* Для примера */
-  gesuredZone.addEventListener('touchmove', (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    if (event.target.className !== 'sliderPanel'
+    touchstartX = event.screenX;
+  }
+}, false);
+
+/* Обработайте данные */
+/* Для примера */
+gesuredZone.addEventListener('touchmove', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  if (event.target.className !== 'sliderPanel'
       && event.target.className !== 'labelDot'
       && event.target.className !== 'searchPanel'
       && event.target.className !== 'searchQueryInput'
       && event.target.className !== 'buttonSearch') {
-      if (event.which === 1) {
-        const drive = document.querySelectorAll('.content');
-        shift = touchstartX - event.clientX;
-        if (Math.abs(shift) > 50) {
-          if (shift < 0 && storageInf.activeSlide !== 1) {
-            drive[storageInf.activeSlide - 1].style.left = `${-shift}px`;
-            storageInf.prevActiveSlide = storageInf.activeSlide;
-          }
-          if (shift > 0 && storageInf.activeSlide !== storageInf.totalPoint) {
-            drive[storageInf.activeSlide - 1].style.left = `-${shift}px`;
-            storageInf.prevActiveSlide = storageInf.activeSlide;
-          }
+    if (event.which === 1) {
+      const drive = document.querySelectorAll('.content');
+      shift = touchstartX - event.clientX;
+      if (Math.abs(shift) > 50) {
+        if (shift < 0 && storageInf.activeSlide !== 1) {
+          drive[storageInf.activeSlide - 1].style.left = `${-shift}px`;
+          storageInf.prevActiveSlide = storageInf.activeSlide;
+        }
+        if (shift > 0 && storageInf.activeSlide !== storageInf.totalPoint) {
+          drive[storageInf.activeSlide - 1].style.left = `-${shift}px`;
+          storageInf.prevActiveSlide = storageInf.activeSlide;
         }
       }
     }
-  }, false);
-  
-  /* touchend */
-  gesuredZone.addEventListener('touchend', (event) => {
+  }
+}, false);
 
-    if (event.target.className !== 'sliderPanel'
+/* touchend */
+gesuredZone.addEventListener('touchend', (event) => {
+  if (event.target.className !== 'sliderPanel'
       && event.target.className !== 'labelDot'
       && event.target.className !== 'searchPanel'
       && event.target.className !== 'searchQueryInput'
       && event.target.className !== 'buttonSearch') {
-      const drive = document.querySelectorAll('.content');
-      touchendX = event.screenX;
-      storageInf = handleGesure(storageInf);
-      touchstartX = 0;
-      touchendX = 0;
-      if (shift > 0) {
-        drive[storageInf.activeSlide - 1].classList.add('leaving1');
-      } else drive[storageInf.activeSlide - 1].classList.add('leaving2');
-      shift = 0;
-      for (let i = 0; i < drive.length; i++) {
-        drive[i].style.left = '0px';
-      }
+    const drive = document.querySelectorAll('.content');
+    touchendX = event.screenX;
+    storageInf = handleGesure(storageInf);
+    touchstartX = 0;
+    touchendX = 0;
+    if (shift > 0) {
+      drive[storageInf.activeSlide - 1].classList.add('leaving1');
+    } else drive[storageInf.activeSlide - 1].classList.add('leaving2');
+    shift = 0;
+    for (let i = 0; i < drive.length; i++) {
+      drive[i].style.left = '0px';
     }
-  }, false);
+  }
+}, false);
