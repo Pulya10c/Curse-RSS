@@ -389,6 +389,7 @@ let touchstartX = 0;
 let touchendX = 0;
 const gesuredZone = document.querySelector('body');
 /* touchstart */
+
 gesuredZone.addEventListener('mousedown', (event) => {
 //   event.preventDefault();
 // event.stopPropagation();
@@ -471,30 +472,70 @@ function handleGesure(object) {
   return obj;
 }
 
-// let initialPoint;
-// let finalPoint;
-// document.addEventListener('touchstart', (event) => {
-//   event.preventDefault();
-//   event.stopPropagation();
-//   initialPoint = event.changedTouches[0];
-// }, false);
-// document.addEventListener('touchend', (event) => {
-//   event.preventDefault();
-//   event.stopPropagation();
-//   finalPoint = event.changedTouches[0];
-//   const xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
-//   const yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
-//   if (xAbs > 20 || yAbs > 20) {
-//     if (xAbs > yAbs) {
-//       if (finalPoint.pageX < initialPoint.pageX) {
-//         /* СВАЙП ВЛЕВО */
-//         storageInf.activeSlide += 1;
-//         setActiveSlide(storageInf.activeSlide, storageInf);
-//       } else {
-//         /* СВАЙП ВПРАВО */
-//         storageInf.activeSlide -= 1;
-//         setActiveSlide(storageInf.activeSlide, storageInf);
-//       }
-//     }
-//   }
-// }, false);
+/************************************** */
+
+gesuredZone.addEventListener('touchstart', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+    if (event.target.className !== 'sliderPanel'
+      && event.target.className !== 'labelDot'
+      && event.target.className !== 'searchPanel'
+      && event.target.className !== 'searchQueryInput'
+      && event.target.className !== 'buttonSearch') {
+      if (event.which !== 1) {
+        return;
+      }
+      touchstartX = event.screenX;
+    }
+  }, false);
+  
+  let shift;
+  /* Обработайте данные */
+  /* Для примера */
+  gesuredZone.addEventListener('touchmove', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    if (event.target.className !== 'sliderPanel'
+      && event.target.className !== 'labelDot'
+      && event.target.className !== 'searchPanel'
+      && event.target.className !== 'searchQueryInput'
+      && event.target.className !== 'buttonSearch') {
+      if (event.which === 1) {
+        const drive = document.querySelectorAll('.content');
+        shift = touchstartX - event.clientX;
+        if (Math.abs(shift) > 50) {
+          if (shift < 0 && storageInf.activeSlide !== 1) {
+            drive[storageInf.activeSlide - 1].style.left = `${-shift}px`;
+            storageInf.prevActiveSlide = storageInf.activeSlide;
+          }
+          if (shift > 0 && storageInf.activeSlide !== storageInf.totalPoint) {
+            drive[storageInf.activeSlide - 1].style.left = `-${shift}px`;
+            storageInf.prevActiveSlide = storageInf.activeSlide;
+          }
+        }
+      }
+    }
+  }, false);
+  
+  /* touchend */
+  gesuredZone.addEventListener('touchend', (event) => {
+
+    if (event.target.className !== 'sliderPanel'
+      && event.target.className !== 'labelDot'
+      && event.target.className !== 'searchPanel'
+      && event.target.className !== 'searchQueryInput'
+      && event.target.className !== 'buttonSearch') {
+      const drive = document.querySelectorAll('.content');
+      touchendX = event.screenX;
+      storageInf = handleGesure(storageInf);
+      touchstartX = 0;
+      touchendX = 0;
+      if (shift > 0) {
+        drive[storageInf.activeSlide - 1].classList.add('leaving1');
+      } else drive[storageInf.activeSlide - 1].classList.add('leaving2');
+      shift = 0;
+      for (let i = 0; i < drive.length; i++) {
+        drive[i].style.left = '0px';
+      }
+    }
+  }, false);
