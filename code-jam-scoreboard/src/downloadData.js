@@ -1,8 +1,6 @@
 export default function downloadData(dataGame, dataUsers) {
   const sessions = require(`${dataGame}`);
   const users = require(`${dataUsers}`);
-  
-
   const { rounds, puzzles } = sessions;
   const mapedGames = _.map(puzzles, (puzzle, idx) => {
     const round = _.find(rounds, ['puzzleIndex.$numberLong', idx.toString()]);

@@ -9,10 +9,8 @@ const resultOld = templateTable(dataSoursOld);
 
 const table = document.createElement('table');
 const divCanvas = document.createElement('div');
+const div = document.createElement('div');
 const nameTab = document.createElement('h1');
-console.log(dataSours);
-// nameTab.innerHTML = `Game results ${dataSours[0].game}`;
-// document.querySelector('body').insertBefore(nameTab, document.querySelector('body').firstChild);
 
 document.querySelector('body').appendChild(divCanvas);
 
@@ -21,6 +19,8 @@ let checkState = '';
 divCanvas.className = 'canvas';
 divCanvas.innerHTML = '<canvas id="myChart" width="100%" height="25%"></canvas>';
 document.querySelector('.space').appendChild(divCanvas);
+div.id = 'draw';
+document.querySelector('.wrapper').appendChild(div);
 
 const colorSet = new Set();
 const ctx = document.getElementById('myChart').getContext('2d');
@@ -92,21 +92,29 @@ const removeUserToChart = ({ data: { datasets } }, name) => {
 };
 
 document.querySelector('.space').addEventListener('click', (e) => {
-
   if (e.target.className === 'one' || e.target.className === 'two' || e.target.className === 'three') {
     if (e.target.className === 'one' && e.target.className !== checkState) {
+      divCanvas.style.display = '';
+      chartConfig.data.datasets = [];
+      myChart.update();
       nameTab.innerHTML = `Game results ${dataSours[1][0].game} 2018Q1`;
       table.innerHTML = resultNow;
       checkState = 'one';
     }
 
     if (e.target.className === 'two' && e.target.className !== checkState) {
+      chartConfig.data.datasets = [];
+      divCanvas.style.display = '';
+      myChart.update();
       nameTab.innerHTML = `Game results ${dataSours[1][0].game} 2018Q3`;
       table.innerHTML = resultOld;
       checkState = 'two';
     }
 
     if (e.target.className === 'three' && e.target.className !== checkState) {
+      chartConfig.data.datasets = [];
+      divCanvas.style.display = 'none';
+      myChart.update();
       nameTab.innerHTML = `Game results ${dataSours[1][0].game} 2018Q1 / 2018Q3`;
       table.innerHTML = setComparison(dataSours, dataSoursOld);
       checkState = 'three';
@@ -116,10 +124,10 @@ document.querySelector('.space').addEventListener('click', (e) => {
   }
 });
 document.querySelector('#draw').addEventListener('click', (e) => {
-  if (e.target.checked && e.target.tagName === 'INPUT') { 
+  if (e.target.checked && e.target.tagName === 'INPUT') {
     if (checkState === 'one' || checkState === 'two') {
       if (chartConfig.data.datasets.length < 10) {
-      addUserToChart(chartConfig, e.target.className, e.target.value.split(','));
+        addUserToChart(chartConfig, e.target.className, e.target.value.split(','));
       } else alert('limit display charts finished');
     }
   } else if (checkState === 'one' || checkState === 'two') {
