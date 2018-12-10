@@ -1,6 +1,6 @@
 # pulya10c-2018Q3
 
-link to YouTune
+link to YouTube
 https://youtu.be/JHh0Y7LHfwI
 slides: 
 https://pulya10c.github.io/Presentation-2018Q3/index.html
