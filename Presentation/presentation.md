@@ -1,16 +1,16 @@
 # pulya10c-2018Q3
 
-ðîëèê 
+link to YouTune
 https://youtu.be/JHh0Y7LHfwI
-ñëàéäû 
+slides: 
 https://pulya10c.github.io/Presentation-2018Q3/index.html
 
-Òðàíñêðèïöèÿ:
+Transcription:
 
 
 Data types in JavaScript
 
-Hello. My name is Oleh and today I’d like to tell you about data types in JavaScript. There are seven basic data types in Java script in our days, of those six are primitives and one is complex. They are: boolean, number, string, null, undefined, symbol and object. Let’s look at them in details.
+Hello. My name is Oleh and today Iâ€™d like to tell you about data types in JavaScript. There are seven basic data types in Java script in our days, of those six are primitives and one is complex. They are: boolean, number, string, null, undefined, symbol and object. Letâ€™s look at them in details.
 
 Boolean 
 
@@ -25,7 +25,7 @@ Number
 In JavaScript the data type Number is used for integers and floating-point.
 All numbers in the JavaScript are stored in 64-bit format. In majority of the programming languages division by zero is prohibited. In JavaScript this problem was solved mathematically correct. There is a special value in JavaScript called Infinity (generated as a result of division by zero) and NaN (Not-A-Number - calculation error). Any operation with NaN will return NaN. Infinity value could be negative. A very big number could be also called infinity.
 Undefined
-Like Null, Undefined is a special data type which means the value is not defined. If a variable was initiated but not declared, its value will be Undefined. If the function doesn’t return anything, the output of this function will be Undefined.
+Like Null, Undefined is a special data type which means the value is not defined. If a variable was initiated but not declared, its value will be Undefined. If the function doesnâ€™t return anything, the output of this function will be Undefined.
  But usually it is impossible to assign an Undefined value to a variable. 
 
 String
@@ -48,14 +48,14 @@ Summary
 
 There are seven basic types in JavaScript:
 
-•	number for numbers of any kind: integer or floating-point.
-•	string for strings. A string may have one or more characters, there’s no separate single-character type.
-•	boolean for true/false.
-•	null for unknown values – a standalone type that has a single value null.
-•	undefined for unassigned values – a standalone type that has a single value undefined.
-•	object for more complex data structures.
-•	symbol for unique identifiers.
+â€¢	number for numbers of any kind: integer or floating-point.
+â€¢	string for strings. A string may have one or more characters, thereâ€™s no separate single-character type.
+â€¢	boolean for true/false.
+â€¢	null for unknown values â€“ a standalone type that has a single value null.
+â€¢	undefined for unassigned values â€“ a standalone type that has a single value undefined.
+â€¢	object for more complex data structures.
+â€¢	symbol for unique identifiers.
 The typeof operator allows us to see which type is stored in the variable.
-For null returns "object" – that’s an error in the language, it’s not an object in fact.
+For null returns "object" â€“ thatâ€™s an error in the language, itâ€™s not an object in fact.
 
 Thanks for your attention and let data types be with you!
