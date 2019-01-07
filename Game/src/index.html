@@ -1,1 +1,133 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RSS Game Monstrs vs Hero</title>
+</head>
+
+<body>
+        <header class="navigation">
+            <input id="mute"  class = "menu-navigation disabled" type="button" value=" выключить звук ">
+            <input id="home"  class = "menu-navigation" type="button" value=" Home ">
+            <input id="score"  class = "menu-navigation disabled" type="button" value=" таблица рекордов ">
+            <input id="start-game"  class = "menu-navigation" type="button" value=" Начать игру ">					
+            <input id="exit-game"  class = "menu-navigation" type="button" value=" Выйти ">
+        </header>
+    <main>
+        <section class="loaderArea">
+            <div class="load">
+                <hr/><hr/><hr/><hr/>
+            </div>
+        </section>
+
+        <form class="register-form form element--hidden" id="register-form">
+            <h2 class="form__title">Представься игрок:</h2>
+            <input class="form__input" type="text" id="login" placeholder="Имя" autofocus>
+            <input class="form__input" type="password" id="password" placeholder="Password">
+            <input class="form__button" type="button" value="Играть">
+        </form>
+
+    <div class="game-container element--hidden">
+        <div class="MainWrapper">
+        <div class="wrapper">
+            <section class="start__page" id="start-page">	
+                    <p class="start-game-panel">
+                        <button name="submit" class = "button__start" type="submit">НАЧАТЬ</button>
+                    </p>
+            </section>	
+
+            <section class="modal-dialog">	
+                <div class="spells">
+                    <input  class = "button top-left" type="button" value="Автомат">
+                    <input  class = "button top-right" type="button" value="Аптечка"> <br>
+                    <input  class = "button bottom-left" type="button" value="Базука">
+                    <input  class = "button bottom-right" type="button" value="Нож">
+                </div>
+            </section>
+
+            <section class="battle">	
+
+                <section class="Player">
+
+                    <div class="descriptionCard Hero">
+                        <p class="infoHero"> </p>
+                        <p class="nameHeroLife"> </p>
+                        <div class="boxLife">
+                            <div class="life Hero">
+                            </div>
+                        </div>  
+                    </div>
+
+                    <div id="HeroImages" class="HeroImages">
+                    </div> 
+
+                </section>
+
+                <section class="Animation">
+
+                    <div class="round">
+                        <p class="roundNumder"></p>
+                    </div>
+
+                    <div class="bulletHero">
+                        <img class="weaponHero">
+                    </div>
+
+                </section>
+
+                <section class="Monsters">
+
+                    <div class="descriptionCard Monster">
+                        <p class="infoMonster"> </p>
+                        <p class="nameMonsterLife"> </p>
+                        <div class="boxLife right">
+                            <div class="life Monster">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="MonsterImages" id="MonsterImages">
+                            <div id = "MonsterImLegs" class="MonsterIm legs" ></div>
+                            <div id = "MonsterImBody" class="MonsterIm body" ></div>
+                            <div id = "MonsterImHead" class="MonsterIm head" ></div>
+                            <div id = "MonsterWound" class="MonsterIm" ></div>
+                    </div>
+                    
+                </section>
+            </section>
+            
+            <section class = "modal-game-over" id="gameOver">
+                <div class="inscription" id = "inscription">
+                    <h2 class="game-over">Конец игры</h2>
+                </div>
+            </section>
+
+            <section class="modal modal--task element--hidden" id="task">
+                <div class="modal__content modal__content--task" id="task-content">
+                    <p class="modal__text modal__text--task" id="task-todo-message">Дайте ответ:</p>
+                    <form class="modal__task task" id="task-to-solve">
+                        
+                    </form>
+                </div>
+            </section>
+        
+            <section class="modal element--hidden" id="top-scores">
+                <div class="modal__content modal__content--scores" id="top-scores-content">
+                    <p class="modal__text modal__text--scores">Лучшие из лучших</p>
+                    <div class="modal__top-scores" >
+                    </div>
+                </div>
+                
+            </section>
+        </div>
+    </div>
+</div>
+</main>    
+<!-- <script src="game.main.js" defer></script> -->
+    <!-- <script src="index.js"></script> -->
+</body>
+
+</html>
