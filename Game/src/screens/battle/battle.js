@@ -177,7 +177,7 @@ class Monster {
     await pause(800);
     playSound(kickHero);
     player1.className = 'HeroImages Hurt';
-    await pause(1000);
+    await pause(1100);
     Monster.setMonsterActivity('', this.ImgMonster.headIdle, this.ImgMonster.bodyIdle, this.ImgMonster.legsIdle);
     await pause(200);
     cannonHero.className = 'bulletHero';
@@ -270,7 +270,6 @@ class Hero {
     player1.className = 'HeroImages Attack3 runing-right';
     await pause(1000);
     player1.className = 'HeroImages Idle';
-    // await pause(10000);
   }
 
   static async attack5(element) {
@@ -395,10 +394,8 @@ async function AttackPlayer() {
     alian.life = 0;
     healt.innerHTML = alian.life;
   } else if (damage < 0) {
-    console.log('до', hero.life);
     await drawLifeChanges(hero, lifeHero);
     document.querySelector('.nameHeroLife').innerHTML = hero.life;
-    console.log('после', hero.life);
   } else {
     await drawLifeChanges(alian, life);
     healt.innerHTML = alian.life;
@@ -472,11 +469,9 @@ async function attackMonster(delay) {
     hero.life = 0;
     healt.innerHTML = hero.life;
   } else if (damage < 0) {
-    console.log('до ', alian.life);
     await drawLifeChanges(alian, lifeMonster);
     document.querySelector('.nameMonsterLife').innerHTML = alian.life;
     healt.innerHTML = alian.life;
-    console.log('после ', alian.life);
   } else {
     await drawLifeChanges(hero, life);
     document.querySelector('.nameHeroLife').innerHTML = hero.life;
@@ -491,7 +486,7 @@ async function attackMonster(delay) {
 
   if (!hero.life || !alian.life) {
     if (!hero.life) {
-      document.getElementsByTagName('audio').remove();
+      document.querySelector('audio').remove();
       document.querySelector('#mute').value = ' выключить звук ';
       await playSound(ded);
       player1.className = 'tombstoneHero';
@@ -535,7 +530,6 @@ function goAttackMonster(wordSpell) {
     attackMonster(5000);
   }
   if (wordSpell === 'first aid kit') {
-    console.log('старт m');
     damage = -10;
     alian.healthUp();
     attackMonster(0);
@@ -552,7 +546,6 @@ function goAttackHero(wordSpell) {
     startAttackHero(7500);
   }
   if (wordSpell === 'first aid kit') {
-    console.log('старт h');
     damage = -10;
     hero.healthUp();
     startAttackHero(0);
