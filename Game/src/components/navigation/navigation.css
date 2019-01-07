@@ -17,6 +17,26 @@
 
 }
 
+.menu-navigation.sound-off{
+  width: 55px;
+  /* background-color: linear-gradient(#52cfeb, #42A2BC) transparent; */
+  background: #52cfeb url('../../screens/battle/img/volume-of.png') center no-repeat;
+}
+
+.menu-navigation.sound-on{
+  width: 55px;
+  /* background-color: linear-gradient(#52cfeb, #42A2BC) transparent; */
+  background: #52cfeb url('../../screens/battle/img/volume-on.png') center no-repeat;
+}
+
+.menu-navigation.sound-on.disabled{
+  pointer-events: none;
+  opacity: 0.2;
+  width: 55px;
+  /* background-color: linear-gradient(#52cfeb, #42A2BC) transparent; */
+  background: #52cfeb url('../../screens/battle/img/volume-on.png') center no-repeat;
+}
+
 .navigation {
   padding: 5px 0 5px 0;
   height: 2.0em;

@@ -2,6 +2,8 @@
 /* eslint-disable no-eval */
 
 import './navigation.css';
+import '../../screens/battle/img/volume-of.png';
+import '../../screens/battle/img/volume-on.png';
 
 document.querySelector('#home').addEventListener('click', () => {
   window.location.href = './index.html';
@@ -19,7 +21,7 @@ document.querySelector('#start-game').addEventListener('click', () => {
   document.querySelector('#register-form').className = 'register-form form';
   document.querySelector('#start-game').className += ' disabled';
   document.querySelector('#score').className = 'menu-navigation';
-  document.querySelector('#mute').className = 'menu-navigation';
+  document.querySelector('#mute').className = 'menu-navigation sound-on';
 });
 
 document.querySelector('#score').addEventListener('click', () => {
@@ -29,11 +31,11 @@ document.querySelector('#score').addEventListener('click', () => {
 
 document.querySelector('#mute').addEventListener('click', () => {
   if (document.querySelector('audio')) {
-    if (document.querySelector('#mute').value === ' выключить звук ') {
-      document.querySelector('#mute').value = ' включить звук ';
+    if (document.querySelector('#mute').className === 'menu-navigation sound-on') {
+      document.querySelector('#mute').className = 'menu-navigation sound-off';
       document.querySelector('audio').volume = 0;
-    } else if (document.querySelector('#mute').value === ' включить звук ') {
-      document.querySelector('#mute').value = ' выключить звук ';
+    } else if (document.querySelector('#mute').className === 'menu-navigation sound-off') {
+      document.querySelector('#mute').className = 'menu-navigation sound-on';
       document.querySelector('audio').volume = 0.1;
     }
   }
