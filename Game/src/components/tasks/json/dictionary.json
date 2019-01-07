@@ -1,0 +1,214 @@
+﻿[
+	{
+		"word": "cat",
+		"translation": [
+			"котик",
+			"кот",
+			"кошка",
+			"кошечка",
+			"котенок"
+		]
+	},
+	{
+		"word": "dog",
+		"translation": [
+			"собака",
+			"собачка",
+			"пёс",
+			"пёсик",
+			"пес",
+			"песик"
+		]
+	},
+	{
+		"word": "Red",
+		"translation": [
+			"красный"
+		]
+	},
+	{
+		"word": "duck",
+		"translation": [
+			"утка",
+			"уточка",
+			"утенок",
+			"утёнок"
+		]
+	},
+	{
+		"word": "horse",
+		"translation": [
+			"лошадь",
+			"лошадка"
+		]
+	},
+	{
+		"word": "rabbit",
+		"translation": [
+			"кролик"
+		]
+	},
+	{
+		"word": "mother",
+		"translation": [
+			"мама",
+			"мамочка",
+			"мамуля"
+		]
+	},
+	{
+		"word": "father",
+		"translation": [
+			"папа",
+			"отец",
+			"папочка"
+		]
+	},
+	{
+		"word": "green",
+		"translation": [
+			"зеленый"
+		]
+	},
+	{
+		"word": "hello",
+		"translation": [
+			"привет"
+		]
+	},
+	{
+		"word": "goodbye",
+		"translation": [
+			"пока",
+			"до свидания"
+		]
+	},
+	{
+		"word": "boy",
+		"translation": [
+			"мальчик"
+		]
+	},
+	{
+		"word": "girl",
+		"translation": [
+			"девочка",
+			"девченка",
+			"девушка"
+		]
+	},
+	{
+		"word": "white",
+		"translation": [
+			"белый"
+		]
+	},
+	{
+		"word": "black",
+		"translation": [
+			"черный"
+		]
+	},
+	{
+		"word": "blue",
+		"translation": [
+			"синий",
+			"голубой"
+		]
+	},
+	{
+		"word": "grey",
+		"translation": [
+			"серый"
+		]
+	},
+	{
+		"word": "yellow",
+		"translation": [
+			"желтый"
+		]
+	},
+	{
+		"word": "book",
+		"translation": [
+			"книга",
+			"книжка"
+		]
+	},
+	{
+		"word": "lesson",
+		"translation": [
+			"урок"
+		]
+	},
+	{
+		"word": "food",
+		"translation": [
+			"еда",
+			"пища"
+		]
+	},
+	{
+		"word": "water",
+		"translation": [
+			"вода"
+		]
+	},
+	{
+		"word": "friend",
+		"translation": [
+			"друг",
+			"подруга",
+			"подружка"
+		]
+	},
+	{
+		"word": "family",
+		"translation": [
+			"семья"
+		]
+	},
+	{
+		"word": "school",
+		"translation": [
+			"школа"
+		]
+	},
+	{
+		"word": "tree",
+		"translation": [
+			"дерево"
+		]
+	},
+	{
+		"word": "plate",
+		"translation": [
+			"тарелка"
+		]
+	},
+	{
+		"word": "cup",
+		"translation": [
+			"кружка",
+			"стакан",
+			"кружечка",
+			"чашка",
+			"чашечка"
+		]
+	},
+	{
+		"word": "teacher",
+		"translation": [
+			"учитель",
+			"учительница",
+			"преподаватель",
+			"препод"
+		]
+	},
+	{
+		"word": "apple",
+		"translation": [
+			"яблоко"
+		]
+	}
+]
