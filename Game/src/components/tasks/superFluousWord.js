@@ -11,6 +11,6 @@ export default function superFluousWord() {
       <div className = "task5">
       ${template}
       </div>`;
-  document.querySelector('#task5__button1').focus();
+  document.querySelector('#task5__button0').focus();
   return setOfWords.answer;
 }

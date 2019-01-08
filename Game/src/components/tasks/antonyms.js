@@ -12,6 +12,6 @@ export default function antonyms() {
       <input autofocus class = "task-6" type="text" style = 'width: ${word.antonym.length * 20}px;border: 2px solid red;'>
       </div>
      <input id = "task6__button" class="task__button" type="button" value="Ответить">`;
-  document.querySelector('.tack-6').focus();
+  document.querySelector('.task-6').focus();
   return word.antonym;
 }

@@ -11,6 +11,6 @@ export default function sities() {
       <input autofocus class = "task-7" type="text" style = 'width: ${city.country.length * 20}px;border: 2px solid red;'>
       </div>
      <input id = "task7__button" class="task__button" type="button" value="Ответить">`;
-  document.querySelector('.tack-7').focus();
+  document.querySelector('.task-7').focus();
   return city.country;
 }

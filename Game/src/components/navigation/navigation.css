@@ -11,7 +11,7 @@
     border-radius: 5px;
 }
 
-.menu-navigation:hover {
+.menu-navigation:hover, .menu-navigation:focus  {
     color: rgb(252, 189, 189);
     background: linear-gradient(#22a4c2, rgb(42, 113, 133));
 
@@ -19,13 +19,11 @@
 
 .menu-navigation.sound-off{
   width: 55px;
-  /* background-color: linear-gradient(#52cfeb, #42A2BC) transparent; */
   background: #52cfeb url('../../screens/battle/img/volume-of.png') center no-repeat;
 }
 
 .menu-navigation.sound-on{
   width: 55px;
-  /* background-color: linear-gradient(#52cfeb, #42A2BC) transparent; */
   background: #52cfeb url('../../screens/battle/img/volume-on.png') center no-repeat;
 }
 
