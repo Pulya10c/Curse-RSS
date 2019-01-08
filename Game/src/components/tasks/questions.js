@@ -11,8 +11,9 @@ export default function questions() {
       <p class = "wordTask9" style = "color: green;margin: 0 0 30px;">${questionItem.question}</p>
       </div>
       <div className = "task9">
-      <input id = "task9__button1" class="task__button" type="button" value="правда">
-      <input id = "task9__button2" class="task__button" type="button" value="ложь">
+      <input tabindex="0" autofocus id = "task9__button1" class="task__button" type="button" value="правда">
+      <input tabindex="0" id = "task9__button2" class="task__button" type="button" value="ложь">
       </div>`;
+  document.querySelector('#task9__button1').focus();
   return questionItem.answer;
 }

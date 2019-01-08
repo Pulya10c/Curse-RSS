@@ -12,6 +12,6 @@
       <p class = "conditionTask">${expression} =</p> <input autofocus class = "task-1" style = "width: 60px" type="text" >   
      </div>
      <input id = "task1__button"  class="task__button" type="button" value="Ответить">`;
-  document.querySelector('.task-1').focus();
+  document.querySelector('.tack-1').focus();
   return eval(expression);
 }

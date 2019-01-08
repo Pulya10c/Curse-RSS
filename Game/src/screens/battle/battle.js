@@ -369,6 +369,7 @@ class Game {
     await pause(2000);
     spells.className += ' Gooo';
     document.querySelector('.modal-dialog').className += ' active';
+    document.querySelector('.button.top-left').focus();
   }
 }
 
@@ -451,6 +452,7 @@ async function AttackPlayer() {
 
     spells.className += ' Gooo';
     document.querySelector('.modal-dialog').className += ' active';
+    document.querySelector('.button.top-left').focus();
   }
 }
 
@@ -520,6 +522,7 @@ async function attackMonster(delay) {
     await pause(2000);
     spells.className += ' Gooo';
     document.querySelector('.modal-dialog').className += ' active';
+    document.querySelector('.button.top-left').focus();
   }
 }
 
@@ -559,7 +562,7 @@ function goAttackHero(wordSpell) {
 document.querySelector('body').addEventListener('click', (e) => {
   if (e.target.className === 'button__start') {
     newGame.start();
-    document.querySelector('main').style.backgroundImage = 'url(null)';
+    document.querySelector('main').style.backgroundImage = 'url()';
   }
 });
 

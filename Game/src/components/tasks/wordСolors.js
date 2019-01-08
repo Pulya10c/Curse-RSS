@@ -8,8 +8,8 @@ export default function wordСolors() {
       </div>
       <div class = "word task" style = "border:1px solid black;margin: auto;width:100px;height:100px;background:${color.color}">
       </div>
-      <input autofocus class = "task-10" type="text" style = 'text-align: center;margin:20px 0 0 13%;border: 2px solid red;'>
-      <input id = "task10__button" class="task__button" type="button" value="Ответить">`;
+      <input tabindex="0" autofocus class = "task-10" type="text" style = 'text-align: center;margin:20px 0 0 13%;border: 2px solid red;'>
+      <input tabindex="0" id = "task10__button" class="task__button" type="button" value="Ответить">`;
   document.querySelector('.task-10').focus();
   return color.name;
 }

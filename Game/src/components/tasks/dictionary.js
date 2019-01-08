@@ -12,6 +12,6 @@ export default function dictionary() {
       <input autofocus class = "task-8" type="text" style = 'text-align: center;width: 300px;border: 2px solid red;'>
       </div>
      <input id = "task8__button" class="task__button" type="button" value="Ответить">`;
-  document.querySelector('.task-8').focus();
+  document.querySelector('.tack-8').focus();
   return wordTask.translation;
 }

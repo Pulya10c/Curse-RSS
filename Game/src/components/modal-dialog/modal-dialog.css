@@ -233,6 +233,13 @@ input:placeholder-shown {
 .task__button:hover {
   background-color: #22a4c2;
   border: 2px solid #22a4c2;
+  outline: none;
+}
+
+.task__button:focus {
+  background-color: #22a4c2 !important;
+  border: 2px solid #22a4c2 !important;
+  outline: none;
 }
 
 .task__repeat-button,
@@ -274,97 +281,6 @@ input:placeholder-shown {
 .task__input:placeholder-shown {
   font-size: 20px;
 }
-/* 
-.task__condition--listening .task__input,
-.task__condition--antonyms .task__input,
-.task__condition--translation .task__input,
-.task__condition--guess-animal .task__input,
-.task__condition--word-color .task__input,
-.task__condition--remember-words .task__input {
-  width: 210px;
-  margin-left: 30px;
-  box-sizing: border-box;
-}
-
-.task__condition--comparison,
-.task__condition--truth-or-lie,
-.task__condition--city-or-country {
-  flex-wrap: wrap;
-}
-
-.comparison__nums p:nth-child(2) {
-  color: green;
-  font-size: 18px;
-  font-weight: normal;
-} */
-/* 
-.task__condition--comparison > p,
-.task__condition--truth-or-lie > p,
-.task__condition--city-or-country > p, 
-.task__condition--oddword p {
-  width: fit-content;
-  min-width: 100px;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  border-radius: 5px;
-}
-
-.comparison__nums,
-.city-or-country__name {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-/* 
-.truth-or-lie__question,
-.city-or-country__name {
-  width: 100%;
-  text-align: center;
-  font-weight: normal;
-  color: green;
-}
-
-.task__condition--spelling .task__input {
-  width: 45px;
-}
-
-.task__condition--spelling .task__input::-webkit-input-placeholder {
-  color: transparent;
-} */
-/* 
-.task__condition--oddword .ui-selected,
-.task__condition--comparison > p.ui-selected,
-.task__condition--truth-or-lie > p.ui-selected,
-.task__condition--city-or-country > p.ui-selected {
-  padding-left: 10px;
-  padding-right: 10px;
-  background: #F39814; 
-  color: white; 
-  border-radius: 5px;
-} */
-/* 
-.task__condition--cases {
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: normal;
-}
-
-.task__condition--cases p,
-.task__condition--cases .task__input {
-  width: 45%;
-  text-align: center;
-}
-
-.task__condition--sortletters p {
-  padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  border-radius: 5px;
-} */
 
 .dialogue--hidden {
   display: none;

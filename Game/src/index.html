@@ -26,12 +26,12 @@
 
         <main>
 
-            <form class="register-form form element--hidden" id="register-form">
+            <section class="register-form form element--hidden" id="register-form">
                 <h2 class="form__title">Представься игрок:</h2>
-                <input class="form__input" type="text" id="login" placeholder="Имя" autofocus>
+                <input autofocus class="form__input" type="text" id="login" placeholder="Имя">
                 <input class="form__input" type="password" id="password" placeholder="Password">
                 <input class="form__button" type="button" value="Играть">
-            </form>
+            </section>
 
             <div class="game-container element--hidden">
                 <div class="MainWrapper">
@@ -45,10 +45,10 @@
 
                         <section class="modal-dialog">	
                             <div class="spells">
-                                <input  class = "button top-left" type="button" value="Автомат">
-                                <input  class = "button top-right" type="button" value="Аптечка"> <br>
-                                <input  class = "button bottom-left" type="button" value="Базука">
-                                <input  class = "button bottom-right" type="button" value="Нож">
+                                <input autofocus class = "button top-left" type="button" value="Автомат">
+                                <input class = "button top-right" type="button" value="Аптечка"> <br>
+                                <input class = "button bottom-left" type="button" value="Базука">
+                                <input class = "button bottom-right" type="button" value="Нож">
                             </div>
                         </section>
 
@@ -112,9 +112,9 @@
                         <section class="modal modal--task element--hidden" id="task">
                             <div class="modal__content modal__content--task" id="task-content">
                                 <p class="modal__text modal__text--task" id="task-todo-message">Дайте ответ:</p>
-                                <form class="modal__task task" id="task-to-solve">
+                                <div class="modal__task task" id="task-to-solve">
                                     
-                                </form>
+                                </div>
                             </div>
                         </section>
             

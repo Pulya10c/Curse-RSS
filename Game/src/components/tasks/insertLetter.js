@@ -10,6 +10,6 @@ export default function insertLetter() {
       <p id = "part2"> ${spelling[random].secondPart}</p>   
      </div>
      <input id = "task3__button" class="task__button" type="button" value="Ответить">`;
-  document.querySelector('.task-3').focus();
+  document.querySelector('.tack-3').focus();
   return spelling[random].letter;
 }

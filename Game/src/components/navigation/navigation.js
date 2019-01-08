@@ -19,6 +19,7 @@ document.querySelector('#exit-game').addEventListener('click', () => {
 
 document.querySelector('#start-game').addEventListener('click', () => {
   document.querySelector('#register-form').className = 'register-form form';
+  document.querySelector('#login').focus();
   document.querySelector('#start-game').className += ' disabled';
   document.querySelector('#score').className = 'menu-navigation';
   document.querySelector('#mute').className = 'menu-navigation sound-on';

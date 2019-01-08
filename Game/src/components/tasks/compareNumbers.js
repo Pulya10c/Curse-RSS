@@ -10,9 +10,10 @@ export default function compareNumbers() {
       <p id = "part2"> ${expressionPast}</p>   
      </div>
      <div className = "task2">
-     <input id = "task2__button1" class="task__button" type="button" value="<">
-     <input id = "task2__button2" class="task__button" type="button" value=">">
-     <input id = "task2__button3" class="task__button" type="button" value="=">
+     <input tabindex="0" autofocus id = "task2__button1" class="task__button" type="button" value="<">
+     <input tabindex="0" id = "task2__button2" class="task__button" type="button" value=">">
+     <input tabindex="0" id = "task2__button3" class="task__button" type="button" value="=">
       </div>`;
+  document.querySelector('#task2__button1').focus();
   return [+expressionFirst, +expressionPast];
 }
