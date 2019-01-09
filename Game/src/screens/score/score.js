@@ -57,7 +57,7 @@ export default class ScoreManadge {
       scoreAll = scoreAll.sort((a, b) => b.wonFights - a.wonFights);
       const line = scoreAll.map((item, idx) => `<tr><td >${idx + 1}</td><th>${item.name}</th><th>${item.wonFights}</th></tr>`);
       table.innerHTML = `
-      <tbody><tr><th>позиция</th><th>Имя игрока</th><th>Количество убитых монстров</th></tr>${line}</tbody>`;
+      <tbody><tr><th>позиция</th><th>Имя игрока</th><th>Количество убитых монстров</th></tr>${line.join('')}</tbody>`;
     }
   }
 }
