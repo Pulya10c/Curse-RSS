@@ -138,13 +138,13 @@ const pause = time => new Promise((resolve) => {
 class Monster {
   constructor() {
     this.essence = 'monster';
-    this.name = `${monsterNameProp.adjective[Math.round(Math.random() * (monsterNameProp.adjective.length - 1))]}`
-         + ` ${monsterNameProp.subject[Math.round(Math.random() * (monsterNameProp.subject.length - 1))]}`
-         + ` ${monsterNameProp.name[Math.round(Math.random() * (monsterNameProp.name.length - 1))]}`;
+    this.name = `${monsterNameProp.adjective[Math.round(Math.random() * (monsterNameProp.adjective.length))]}`
+         + ` ${monsterNameProp.subject[Math.round(Math.random() * (monsterNameProp.subject.length))]}`
+         + ` ${monsterNameProp.name[Math.round(Math.random() * (monsterNameProp.name.length))]}`;
     this.life = 100;
-    this.header = Math.round(Math.random() * (MonsterHeadIdle.length - 1));
-    this.boder = Math.round(Math.random() * (MonsterBodyIdle.length - 1));
-    this.lenger = Math.round(Math.random() * (MonsterLegsIdle.length - 1));
+    this.header = Math.round(Math.random() * (MonsterHeadIdle.length));
+    this.boder = Math.round(Math.random() * (MonsterBodyIdle.length));
+    this.lenger = Math.round(Math.random() * (MonsterLegsIdle.length));
     this.ImgMonster = {
       headIdle: MonsterHeadIdle[this.header],
       bodyIdle: MonsterBodyIdle[this.boder],
