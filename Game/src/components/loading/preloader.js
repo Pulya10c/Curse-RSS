@@ -3,6 +3,8 @@ import './preloader.css';
 
 // eslint-disable-next-line func-names
 window.onload = function () {
+  document.querySelector('header').style.visibility = 'visible';
+  document.querySelector('main').style.visibility = 'visible';
   setTimeout(() => {
     document.querySelector('.preloader').className += ' stop';
   }, 1500);

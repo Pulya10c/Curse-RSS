@@ -5,7 +5,7 @@
 }
 
 body{
-  background: #382b2d;
+  background: #33393e;
 }
 
 h1, h2, h3, h4, h5 ,h6{
@@ -27,7 +27,6 @@ main {
   background: url('./screens/landing/img/main__background.jpg') round;
   height: 95vh;
   align-items: center;
-  /* display: none; */
 }
 
 .wrapper {

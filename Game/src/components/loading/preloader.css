@@ -24,22 +24,13 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	animation: 2s load infinite linear;
+	animation: 1.5s load infinite linear;
 }
 
 .preloader.stop{
     visibility: hidden;
     opacity: 0;
     transition: 1s all;
-}
-
-@keyframes stop {
-	from {
-		opacity: 1;
-	}
-	to {
-        opacity: 0;
-	}
 }
 
 @keyframes load {
