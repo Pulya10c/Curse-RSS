@@ -3,6 +3,8 @@
 
 import './landing.css';
 
+import '../../components/loading/preloader';
+
 import './img/RSS2018q3_v3.png';
 import './img/background2.jpg';
 import './img/my-foto.jpg';

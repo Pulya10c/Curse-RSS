@@ -3,5 +3,10 @@ import './preloader.css';
 
 // eslint-disable-next-line func-names
 window.onload = function () {
-  setTimeout(() => { window.document.querySelector('.loaderArea').className += ' stop'; }, 1500);
+  setTimeout(() => {
+    document.querySelector('.preloader').className += ' stop';
+  }, 1500);
+  setTimeout(() => {
+    document.querySelector('.preloader.stop').style.display = 'none';
+  }, 2500);
 };

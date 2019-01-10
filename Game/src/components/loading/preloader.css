@@ -1,51 +1,52 @@
-.loaderArea {
-    background: #382b2d;;
-    overflow: hidden;
+
+.preloader{
+	background: #33393e;
+    visibility: visible;
     position: fixed;
     left: 0;
     top: 0;
-    right:0;
-    bottom:0;
+    width: 100%;
+    height: 100%;
     z-index: 100000;
+    /* transition: 5s all; */
+    opacity: 1;
+    z-index: 100;
+
 }
 
-.loaderArea.stop {
-    display: none;
+.loader {
+	width: 75px;
+	height: 75px;
+	border: 10px solid white;
+	border-radius: 50%;
+	border-top-color: blue;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: 2s load infinite linear;
 }
 
-.load {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    width:100px;
-    height:100px;
-    /* animation:spin 2s ease infinite; */
+.preloader.stop{
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s all;
 }
 
-.load hr{
-    border:0;
-    margin:0;
-    width:40%;
-    height:40%;
-    position:absolute;
-    border-radius:50%;
-    animation:spin2 2s ease infinite;
+@keyframes stop {
+	from {
+		opacity: 1;
+	}
+	to {
+        opacity: 0;
+	}
 }
-  
-.load :first-child{top:50%;background:#19A68C;animation-delay:-1.5s}
-.load :nth-child(2){left:50%;background:#F63D3A;animation-delay:-1s}
-.load :nth-child(3){top:50%;left:50%;background:#FDA543;animation-delay:-0.5s}
-.load :last-child{background:#193B48}
-  
-@keyframes spin{
-    0%,100%{transform:translate(0)}
-    25%{transform:translate(160%)}
-    50%{width:50vw; transform:translate(160%, 160%)}
-    75%{transform:translate(0, 160%)}
-  }
 
-  @keyframes spin2 {
-    0%,100%{top:-40vh}
-    75%{top:40vh}
-  }
+@keyframes load {
+	from {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}

@@ -9,16 +9,15 @@
     </head>
 
     <body>  
-
-        <section class="loaderArea">
-            <div class="load">
-                <hr/><hr/><hr/><hr/>
+        <section class="preloader">
+            <div class="loader">
             </div>
         </section>
 
         <header class="navigation">
             <input id="mute"  class = "menu-navigation sound-on disabled" type="button" value="">
-            <input id="home"  class = "menu-navigation" type="button" value=" Home ">
+            <input id="home"  class = "menu-navigation" type="button" value=" Домой ">
+            <input id="control"  class = "menu-navigation" type="button" value=" Управление ">
             <input id="score"  class = "menu-navigation disabled" type="button" value=" таблица рекордов ">
             <input id="start-game"  class = "menu-navigation" type="button" value=" Начать игру ">					
             <input id="exit-game"  class = "menu-navigation" type="button" value=" Выйти ">
@@ -114,6 +113,14 @@
                                 <p class="modal__text modal__text--task" id="task-todo-message">Дайте ответ:</p>
                                 <div class="modal__task task" id="task-to-solve">
                                     
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="modal-control element--hidden" id="windows__control">
+                            <div class="modal__content modal__content--control" id="top-scores-content">
+                                <p class="modal__text modal__text--control">Управление</p>
+                                <div class="modal__control" >
                                 </div>
                             </div>
                         </section>

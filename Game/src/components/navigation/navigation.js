@@ -9,6 +9,13 @@ document.querySelector('#home').addEventListener('click', () => {
   window.location.href = './index.html';
 });
 
+document.querySelector('#control').addEventListener('click', () => {
+  document.querySelector('#windows__control').className = 'modal-control';
+  setTimeout(() => {
+    document.querySelector('#windows__control').className += ' element--hidden';
+  }, 5000);
+});
+
 document.querySelector('#exit-game').addEventListener('click', () => {
   document.querySelector('#start-game').className = 'menu-navigation';
   document.querySelector('#score').className = 'menu-navigation disabled';
@@ -27,7 +34,9 @@ document.querySelector('#start-game').addEventListener('click', () => {
 
 document.querySelector('#score').addEventListener('click', () => {
   document.querySelector('#top-scores').className = 'modal';
-  setTimeout(() => { document.querySelector('#top-scores').className += ' element--hidden'; }, 5000);
+  setTimeout(() => {
+    document.querySelector('#top-scores').className += ' element--hidden';
+  }, 5000);
 });
 
 document.querySelector('#mute').addEventListener('click', () => {
