@@ -2,7 +2,7 @@
 
 export default function insertLetter() {
   const task = document.querySelector('#task-to-solve');
-  const random = Math.floor(Math.random() * 30);
+  const random = Math.floor(Math.random() * spelling.length);
   task.innerHTML = `<div class="task__condition">
       <p>Вставьте букву:</p>
       <p id = "part1">${spelling[random].firstPart} </p>

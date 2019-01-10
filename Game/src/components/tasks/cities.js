@@ -2,7 +2,7 @@
 
 export default function sities() {
   const task = document.querySelector('#task-to-solve');
-  const city = cities[Math.floor(Math.random() * 31)];
+  const city = cities[Math.floor(Math.random() * cities.length)];
   task.innerHTML = `<div class="task__condition">
       <p>в какой стране находится город</p>
       </div>

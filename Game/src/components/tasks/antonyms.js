@@ -3,7 +3,7 @@ import words from './json/antonyms.json';
 
 export default function antonyms() {
   const task = document.querySelector('#task-to-solve');
-  const word = words[Math.floor(Math.random() * 30)];
+  const word = words[Math.floor(Math.random() * words.length)];
   task.innerHTML = `<div class="task__condition">
       <p>Cлово противоположное по значению:</p>
       </div>

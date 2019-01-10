@@ -3,7 +3,7 @@ import question from './json/questions.json';
 
 export default function questions() {
   const task = document.querySelector('#task-to-solve');
-  const questionItem = question[Math.floor(Math.random() * 30)];
+  const questionItem = question[Math.floor(Math.random() * question.length)];
   task.innerHTML = `<div class="task__condition">
       <p>Верно ли утверждение:</p>
       </div>

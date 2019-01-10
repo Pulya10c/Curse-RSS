@@ -244,7 +244,6 @@ class Hero {
     Monster.setMonsterActivity('Hurt', element.ImgMonster.headDie, element.ImgMonster.bodyDie, element.ImgMonster.legsDie);
     playSound(cryMonster);
     MonsterWound.className = 'MonsterIm';
-    // await pause(8000);
   }
 
   static async attack3(element) {
@@ -345,8 +344,8 @@ class Game {
     }
     hero.name = ReturnUserName().name;
     hero.password = ReturnUserName().password;
-
     this.level = ScoreManadge.checkForAvailbilityLevel(hero.name, hero.password);
+    hero.winCount = this.level;
     await ScoreManadge.setScore(hero.name, hero.password, this.level);
     await ScoreManadge.drawScore();
 
@@ -676,9 +675,9 @@ document.querySelector('.modal').addEventListener('click', (e) => {
   }
 
   // обработчик таска №5
-  if (e.target.id === 'task5__button1' || e.target.id === 'task5__button2'
-  || e.target.id === 'task5__button3' || e.target.id === 'task5__button4'
-  || e.target.id === 'task5__button5') {
+  if (e.target.id === 'task5__button0' || e.target.id === 'task5__button1'
+  || e.target.id === 'task5__button2' || e.target.id === 'task5__button3'
+  || e.target.id === 'task5__button4') {
     if (e.target.value === conditionTask) {
       document.querySelector('.task__condition').innerHTML = 'правильно';
       goAttackHero(weaponsForAttack);

@@ -3,7 +3,7 @@ import words from './json/dictionary.json';
 
 export default function dictionary() {
   const task = document.querySelector('#task-to-solve');
-  const wordTask = words[Math.floor(Math.random() * 30)];
+  const wordTask = words[Math.floor(Math.random() * words.length)];
   task.innerHTML = `<div class="task__condition">
       <p>Переведите слово:</p>
       </div>

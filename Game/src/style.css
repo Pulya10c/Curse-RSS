@@ -27,6 +27,7 @@ main {
   background: url('./screens/landing/img/main__background.jpg') round;
   height: 95vh;
   align-items: center;
+  /* display: none; */
 }
 
 .wrapper {

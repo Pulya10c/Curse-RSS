@@ -210,5 +210,146 @@
 		"translation": [
 			"яблоко"
 		]
+	},
+	{
+		"word": "word",
+		"translation": [
+			"слово"
+		]
+	},
+	{
+		"word": "number",
+		"translation": [
+			"число",
+			"цифра"
+		]
+	},
+	{
+		"word": "pen",
+		"translation": [
+			"ручка"
+		]
+	},
+	{
+		"word": "people",
+		"translation": [
+			"люди"
+		]
+	},
+	{
+		"word": "sound",
+		"translation": [
+			"звук",
+			"шум",
+			"тон"
+		]
+	},
+	{
+		"word": "place",
+		"translation": [
+			"место",
+			"местечко",
+			"площадь"
+		]
+	},
+	{
+		"word": "day",
+		"translation": [
+			"день"
+		]
+	},
+	{
+		"word": "year",
+		"translation": [
+			"год"
+		]
+	},
+	{
+		"word": "week",
+		"translation": [
+			"неделя"
+		]
+	},
+	{
+		"word": "line",
+		"translation": [
+			"линия",
+			"прямая",
+			"черта"
+		]
+	},
+	{
+		"word": "animal",
+		"translation": [
+			"животное"
+		]
+	},
+	{
+		"word": "question",
+		"translation": [
+			"вопрос"
+		]
+	},
+	{
+		"word": "answer",
+		"translation": [
+			"ответ"
+		]
+	},
+	{
+		"word": "eye",
+		"translation": [
+			"глаз",
+			"око"
+		]
+	},
+	{
+		"word": "north",
+		"translation": [
+			"север"
+		]
+	},
+	{
+		"word": "south",
+		"translation": [
+			"юг"
+		]
+	},
+	{
+		"word": "east",
+		"translation": [
+			"восток"
+		]
+	},
+	{
+		"word": "west",
+		"translation": [
+			"запад"
+		]
+	},
+	{
+		"word": "paper",
+		"translation": [
+			"бумага"
+		]
+	},
+	{
+		"word": "song",
+		"translation": [
+			"песня",
+			"песенка"
+		]
+	},
+	{
+		"word": "king",
+		"translation": [
+			"король"
+		]
+	},
+	{
+		"word": "watch",
+		"translation": [
+			"часы"
+		]
 	}
 ]

@@ -6,7 +6,7 @@ import words from './json/words.json';
 
 export default function shuffleLettersWord() {
   const task = document.querySelector('#task-to-solve');
-  const word = words[[Math.floor(Math.random() * 30)]].split('');
+  const word = words[[Math.floor(Math.random() * words.length)]].split('');
   const ask = word;
   const ask2 = word.join('');
   for (let i = word.length - 1; i > 0; i--) {

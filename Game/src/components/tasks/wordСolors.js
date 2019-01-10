@@ -2,7 +2,7 @@
 
 export default function wordСolors() {
   const task = document.querySelector('#task-to-solve');
-  const color = colors[Math.floor(Math.random() * 9)];
+  const color = colors[Math.floor(Math.random() * colors.length)];
   task.innerHTML = `<div class="task__condition">
       <p>Напишите название цвета</p>
       </div>
