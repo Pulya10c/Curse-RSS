@@ -6,11 +6,25 @@ import './modal-dialog.css';
 import KeyCod from './keycode.min';
 
 window.addEventListener('keydown', (e) => {
+
+  if (e.keyCode === KeyCod.KEY_ESC) {
+    if (document.activeElement.tagName !== 'INPUT') {
+      e.preventDefault();
+      if (!(document.activeElement.id === 'home') || !(document.activeElement.id === 'mute')
+    || !(document.activeElement.id === 'score') || !(document.activeElement.id === 'start-game')
+    || !(document.activeElement.id === 'exit-game') || !(document.activeElement.id === 'control')) {
+        document.querySelector('#home').focus();
+      }
+    }
+  }
+
   if (document.activeElement.className === 'modal-dialog active') {
     document.querySelector('.button top-right').focus();
   }
-
   if (document.activeElement.tagName === 'BODY') {
+    if (document.querySelector('.spells.Gooo')) {
+      document.querySelector('.button.top-left').focus();
+    }
     if (document.querySelector('#task10__button')) {
       document.querySelector('.task-10').focus();
     }
@@ -44,9 +58,10 @@ window.addEventListener('keydown', (e) => {
   }
 
   if (e.keyCode === KeyCod.KEY_DOWN || e.keyCode === KeyCod.KEY_UP) {
+    console.log(document.querySelectorAll('.task5'));
+    console.log(document.querySelectorAll('.task2'));
+    console.log(document.querySelectorAll('.task9'));
     if (document.activeElement.id === 'task5__button0') {
-      document.querySelector('#task5__button0').focus();
-    } else if (document.activeElement.id === 'task5__button0') {
       document.querySelector('#task5__button1').focus();
     } else if (document.activeElement.id === 'task5__button1') {
       document.querySelector('#task5__button2').focus();
@@ -71,39 +86,24 @@ window.addEventListener('keydown', (e) => {
     }
   }
 
-  if (e.keyCode === KeyCod.KEY_SPASE) {
-    e.preventDefault();
-
-    if (!(document.activeElement.id === 'home') || !(document.activeElement.id === 'mute')
-    || !(document.activeElement.id === 'score') || !(document.activeElement.id === 'start-game')
-    || !(document.activeElement.id === 'exit-game')) {
-      document.querySelector('#home').focus();
-    }
-  }
-
-  if (e.keyCode === KeyCod.KEY_ESC) {
-    e.preventDefault();
-    document.querySelector('body').focus();
-  }
-
-  if (e.keyCode === KeyCod.KEY_SPASE) {
-    e.preventDefault();
-    if (!(document.activeElement.id === 'home') || !(document.activeElement.id === 'mute')
-    || !(document.activeElement.id === 'score') || !(document.activeElement.id === 'start-game')
-    || !(document.activeElement.id === 'exit-game')) {
-      document.querySelector('#home').focus();
-    }
-  }
+  // if (e.keyCode === KeyCod.KEY_ESC) {
+  //   e.preventDefault();
+  //   document.querySelector('body').focus();
+  // }
 
   if (e.keyCode === KeyCod.KEY_LEFT || e.keyCode === KeyCod.KEY_RIGHT) {
-    if (document.activeElement.id === 'home') {
+    if (document.activeElement.id === 'mute') {
+      document.querySelector('#home').focus();
+    } else if (document.activeElement.id === 'home') {
+      document.querySelector('#control').focus();
+    } else if (document.activeElement.id === 'control') {
       document.querySelector('#score').focus();
     } else if (document.activeElement.id === 'score') {
       document.querySelector('#start-game').focus();
     } else if (document.activeElement.id === 'start-game') {
       document.querySelector('#exit-game').focus();
     } else if (document.activeElement.id === 'exit-game') {
-      document.querySelector('#home').focus();
+      document.querySelector('#mute').focus();
     }
   }
 

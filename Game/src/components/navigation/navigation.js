@@ -13,7 +13,7 @@ document.querySelector('#control').addEventListener('click', () => {
   document.querySelector('#windows__control').className = 'modal-control';
   setTimeout(() => {
     document.querySelector('#windows__control').className += ' element--hidden';
-  }, 5000);
+  }, 3000);
 });
 
 document.querySelector('#exit-game').addEventListener('click', () => {
