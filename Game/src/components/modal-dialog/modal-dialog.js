@@ -45,6 +45,8 @@ window.addEventListener('keydown', (e) => {
 
   if (e.keyCode === KeyCod.KEY_DOWN || e.keyCode === KeyCod.KEY_UP) {
     if (document.activeElement.id === 'task5__button0') {
+      document.querySelector('#task5__button0').focus();
+    } else if (document.activeElement.id === 'task5__button0') {
       document.querySelector('#task5__button1').focus();
     } else if (document.activeElement.id === 'task5__button1') {
       document.querySelector('#task5__button2').focus();
@@ -53,7 +55,7 @@ window.addEventListener('keydown', (e) => {
     } else if (document.activeElement.id === 'task5__button3') {
       document.querySelector('#task5__button4').focus();
     } else if (document.activeElement.id === 'task5__button4') {
-      document.querySelector('#task5__button1').focus();
+      document.querySelector('#task5__button0').focus();
     }
     if (document.activeElement.id === 'task9__button1') {
       document.querySelector('#task9__button2').focus();
