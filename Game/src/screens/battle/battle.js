@@ -164,7 +164,7 @@ class Monster {
     document.querySelector('#MonsterImLegs').style.backgroundImage = `url(${this.ImgMonster.legsIdle})`;
     document.querySelector('#MonsterImHead').style.backgroundImage = `url(${this.ImgMonster.headIdle})`;
     document.querySelector('#MonsterImBody').style.backgroundImage = `url(${this.ImgMonster.bodyIdle})`;
-    document.querySelector('.life.Monster').style.width = '100px';
+    document.querySelector('.life.Monster').style.width = `${this.life}px`;
     document.querySelector('.life.Monster').style.backgroundColor = 'green';
     document.querySelector('.infoMonster').innerHTML = this.name;
     document.querySelector('.nameMonsterLife').innerHTML = this.life;
@@ -219,7 +219,7 @@ class Hero {
   }
 
   init() {
-    document.querySelector('.life.Hero').style.width = `${startLifeHero}px`;
+    document.querySelector('.life.Hero').style.width = `${this.life}px`;
     document.querySelector('.life.Hero').style.backgroundColor = 'green';
     document.querySelector('.infoHero').innerHTML = this.name;
     document.querySelector('.nameHeroLife').innerHTML = this.life;
@@ -378,34 +378,32 @@ const newGame = new Game();
 newGame.init();
 
 function drawLifeChanges(player, lifes) {
-  if ((lifes.style.width.split('px').join('') - damage) < 101) {
-    lifes.style.width = `${lifes.style.width.split('px').join('') - damage}px`;
+  if ((player.life - damage) < 101) {
     player.life -= damage;
+    lifes.style.width = `${player.life}px`;
   } else {
-    lifes.style.width = '100px';
     player.life = 100;
+    lifes.style.width = `${player.life}px`;
   }
 }
 
 async function AttackPlayer() {
   const healt = document.querySelector('.nameMonsterLife');
-  const life = lifeMonster;
-
-  if (lifeMonster.style.width.split('px').join('') < damage) {
-    lifeMonster.style.width = '0px';
+  if (alian.life < damage) {
     alian.life = 0;
+    lifeMonster.style.width = `${player.life}px`;
     healt.innerHTML = alian.life;
   } else if (damage < 0) {
     await drawLifeChanges(hero, lifeHero);
     document.querySelector('.nameHeroLife').innerHTML = hero.life;
   } else {
-    await drawLifeChanges(alian, life);
+    await drawLifeChanges(alian, lifeMonster);
     healt.innerHTML = alian.life;
   }
-  if (lifeMonster.style.width.split('px').join('') < 60 && lifeMonster.style.width.split('px').join('') > 30) {
+  if (alian.life < 60 && alian.life > 30) {
     lifeMonster.style.background = 'yellow';
   }
-  if (lifeMonster.style.width.split('px').join('') < 29) {
+  if (alian.life < 29) {
     lifeMonster.style.background = 'red';
   }
   cannonHero.className = 'bulletHero';
@@ -467,24 +465,22 @@ const startAttackHero = async (delay) => {
 async function attackMonster(delay) {
   await pause(delay);
   const healt = document.querySelector('.nameHeroLife');
-  const life = lifeHero;
 
-  if (lifeHero.style.width.split('px').join('') < damage) {
-    lifeHero.style.width = '0px';
+  if (hero.life < damage) {
     hero.life = 0;
+    lifeHero.style.width = `${hero.life}px`;
     healt.innerHTML = hero.life;
   } else if (damage < 0) {
     await drawLifeChanges(alian, lifeMonster);
     document.querySelector('.nameMonsterLife').innerHTML = alian.life;
-    healt.innerHTML = alian.life;
   } else {
-    await drawLifeChanges(hero, life);
+    await drawLifeChanges(hero, lifeHero);
     document.querySelector('.nameHeroLife').innerHTML = hero.life;
   }
-  if (lifeHero.style.width.split('px').join('') < 60 && lifeHero.style.width.split('px').join('') > 30) {
+  if (hero.life < 60 && hero.life > 30) {
     lifeHero.style.background = 'yellow';
   }
-  if (lifeHero.style.width.split('px').join('') < 29) {
+  if (hero.life < 29) {
     lifeHero.style.background = 'red';
   }
   cannonHero.className = 'bulletHero';
@@ -608,14 +604,16 @@ document.querySelector('.spells').addEventListener('click', (e) => {
 // обработчик тасков
 
 const handlerTemplate = (taskNumber) => {
-  if (document.querySelector(taskNumber).value.toLowerCase() === String(conditionTask)) {
+  if (document.querySelector(taskNumber).value.toLowerCase()
+    .replace(/^\s*/, '')
+    .replace(/\s*$/, '') === String(conditionTask)) {
     document.querySelector('.task__condition').innerHTML = 'правильно';
     goAttackHero(weaponsForAttack);
   } else {
     document.querySelector('.task__condition').innerHTML = 'неправильно';
     goAttackMonster(weaponsForAttack);
   }
-  setTimeout(() => { document.querySelector('.modal.modal--task').className += ' element--hidden'; }, 0);
+  document.querySelector('.modal.modal--task').className += ' element--hidden';
 };
 
 // обработчик событий
@@ -657,7 +655,7 @@ document.querySelector('.modal').addEventListener('click', (e) => {
       document.querySelector('.task__condition').innerHTML = 'неправильно';
       goAttackMonster(weaponsForAttack);
     }
-    setTimeout(() => { document.querySelector('.modal.modal--task').className += ' element--hidden'; }, 0);
+    document.querySelector('.modal.modal--task').className += ' element--hidden';
   }
 
   // обработчик третьего таска
@@ -675,7 +673,7 @@ document.querySelector('.modal').addEventListener('click', (e) => {
       document.querySelector('.task__condition_task4').innerHTML = 'неправильно';
       goAttackMonster(weaponsForAttack);
     }
-    setTimeout(() => { document.querySelector('.modal.modal--task').className += ' element--hidden'; }, 0);
+    document.querySelector('.modal.modal--task').className += ' element--hidden';
   }
 
   // обработчик таска №5
@@ -689,7 +687,7 @@ document.querySelector('.modal').addEventListener('click', (e) => {
       document.querySelector('.task__condition').innerHTML = 'неправильно';
       goAttackMonster(weaponsForAttack);
     }
-    setTimeout(() => { document.querySelector('.modal.modal--task').className += ' element--hidden'; }, 0);
+    document.querySelector('.modal.modal--task').className += ' element--hidden';
   }
 
   // обработчик таска №6
@@ -712,7 +710,7 @@ document.querySelector('.modal').addEventListener('click', (e) => {
       document.querySelector('.task__condition').innerHTML = 'неправильно';
       goAttackMonster(weaponsForAttack);
     }
-    setTimeout(() => { document.querySelector('.modal.modal--task').className += ' element--hidden'; }, 0);
+    document.querySelector('.modal.modal--task').className += ' element--hidden';
   }
   // обработчик таска №9
   if (e.target.id === 'task9__button1' || e.target.id === 'task9__button2') {
@@ -729,7 +727,7 @@ document.querySelector('.modal').addEventListener('click', (e) => {
       document.querySelector('.task__condition').innerHTML = 'неправильно';
       goAttackMonster(weaponsForAttack);
     }
-    setTimeout(() => { document.querySelector('.modal.modal--task').className += ' element--hidden'; }, 0);
+    document.querySelector('.modal.modal--task').className += ' element--hidden';
   }
   // обработчик таска №10
   if (e.target.id === 'task10__button') {
