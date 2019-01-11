@@ -122,14 +122,11 @@ header nav li:last-child{
 	margin-right: 0;	
 }
 
-
-
 @media (max-width: 1000px){
 	header{
 		padding: 20px 50px;
 	}
 }
-
 
 @media (max-width: 700px){
 	header{
@@ -140,7 +137,6 @@ header nav li:last-child{
 		margin-bottom: 15px;
 	}
 }
-
 
 .hero{
 	position: relative;
@@ -226,6 +222,14 @@ header nav li:last-child{
 
 .product .grid li.large{
 	flex-basis: 55%;
+}
+
+.product .grid li.small:hover{
+	zoom: 10%;
+}
+
+.product .grid li.large:hover{
+	zoom:10%;
 }
 
 

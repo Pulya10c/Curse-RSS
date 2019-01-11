@@ -84,6 +84,8 @@ import './battle.css';
 
 import ReturnUserName from '../login/login';
 
+let startLifeHero = 100;
+
 const scen = [' scen1', ' scen2', ' scen3', ' scen4'];
 
 const monsterWeapon = [head1, head2, head3];
@@ -213,11 +215,11 @@ class Hero {
     this.winCount = 0;
     this.name = '';
     this.password = '';
-    this.life = 100;
+    this.life = startLifeHero;
   }
 
   init() {
-    document.querySelector('.life.Hero').style.width = '100px';
+    document.querySelector('.life.Hero').style.width = `${startLifeHero}px`;
     document.querySelector('.life.Hero').style.backgroundColor = 'green';
     document.querySelector('.infoHero').innerHTML = this.name;
     document.querySelector('.nameHeroLife').innerHTML = this.life;
@@ -427,6 +429,8 @@ async function AttackPlayer() {
     document.querySelector('.game-over').innerHTML = `Ты одолел ${newGame.level}-го монстра!!!`;
     document.querySelector('#inscription').className += ' animation';
     document.querySelector('#gameOver').className += ' animation';
+
+    startLifeHero = hero.life;
 
     await pause(3000);
 
