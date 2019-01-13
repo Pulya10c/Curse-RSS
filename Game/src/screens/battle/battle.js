@@ -161,6 +161,7 @@ class Monster {
   }
 
   init() {
+    this.life = 100;
     document.querySelector('#MonsterImLegs').style.backgroundImage = `url(${this.ImgMonster.legsIdle})`;
     document.querySelector('#MonsterImHead').style.backgroundImage = `url(${this.ImgMonster.headIdle})`;
     document.querySelector('#MonsterImBody').style.backgroundImage = `url(${this.ImgMonster.bodyIdle})`;
@@ -219,6 +220,7 @@ class Hero {
   }
 
   init() {
+    this.life = startLifeHero;
     document.querySelector('.life.Hero').style.width = `${this.life}px`;
     document.querySelector('.life.Hero').style.backgroundColor = 'green';
     document.querySelector('.infoHero').innerHTML = this.name;
@@ -488,7 +490,7 @@ async function attackMonster(delay) {
   if (!hero.life || !alian.life) {
     if (!hero.life) {
       document.querySelector('audio').remove();
-      document.querySelector('#mute').value = ' выключить звук ';
+      document.querySelector('#mute').className = 'menu-navigation sound-on';
       await playSound(ded);
       player1.className = 'tombstoneHero';
     }
@@ -503,7 +505,7 @@ async function attackMonster(delay) {
     document.querySelector('.game-over').innerHTML = 'Ты проиграл';
     document.querySelector('#inscription').className += ' animation';
     document.querySelector('#gameOver').className += ' animation';
-
+    startLifeHero = 100;
     await pause(3000);
 
     document.querySelector('.game-over').innerHTML = 'Не огорчайся, попробуй еще раз';
