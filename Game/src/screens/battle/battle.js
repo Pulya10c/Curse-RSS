@@ -393,7 +393,7 @@ async function AttackPlayer() {
   const healt = document.querySelector('.nameMonsterLife');
   if (alian.life < damage) {
     alian.life = 0;
-    lifeMonster.style.width = `${player.life}px`;
+    lifeMonster.style.width = `${alian.life}px`;
     healt.innerHTML = alian.life;
   } else if (damage < 0) {
     await drawLifeChanges(hero, lifeHero);
